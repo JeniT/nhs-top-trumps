@@ -25,7 +25,13 @@ titleText = 'white'
 scoreText = 'white'
 
 if input('Do you want to use your own colour scheme? (y or n) ') == 'y':
-    background = input('What colour ')
+    background = input('What colour do you want the background to be? ')
+    mapBackground = input('What colour do you want the map background to be? ')
+    mapColour = input('What colour do you want the map to be? ')
+    titleBar = input('What colour do you want the title bar to be? ')
+    scoreBox = input('What colour do you want the score box to be? ')
+    titleText = input('What colour text do you want the title to be? ')
+    scoreText = input('What colour text do you want the scores to be? ')
 
 for line in file.read().splitlines():
     n = n + 1
