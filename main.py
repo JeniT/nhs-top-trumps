@@ -1,5 +1,6 @@
 import os
 from xml.etree import ElementTree as et
+
 dataFile = input('What file do you want to use for data? ')
 while not os.path.isfile(dataFile):
     dataFile = input('What file do you want to use for data? ')
@@ -46,7 +47,7 @@ for line in file.read().splitlines():
         f.write('<?xml version=\"1.0\" standalone=\"no\"?>\n')
         f.write('<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"\n')
         f.write('\"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n')
-        f.write('<svg height="1800" version="1.1" width="1800" xmlns="http://www.w3.org/2000/svg">')
+        f.write('<svg height="390" version="1.1" width="290" xmlns="http://www.w3.org/2000/svg">')
         f.write('<defs>')
         f.write('<style type="text/css">')
         f.write('@font-face {')
