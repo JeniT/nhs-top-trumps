@@ -7,6 +7,7 @@ while not os.path.isfile(dataFile):
 file = open(dataFile, 'r')
 n = 0
 headers = []
+codes = []
 
 # Colour schemes #
 # background = '#009639'
@@ -42,7 +43,7 @@ for line in file.read().splitlines():
         data = line.split(',')
         code = data[0]
         name = data[1]
-        print(code)
+        codes.append(code)
         f = open('cards/' + code + '.svg', 'w')
         f.write('<?xml version=\"1.0\" standalone=\"no\"?>\n')
         f.write('<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"\n')
@@ -98,6 +99,13 @@ for line in file.read().splitlines():
 
 file.close()
 
+f = open('randomCard.js', 'w')
+f.write('var cards = ' + str(codes) + ';\n')
+f.write('var random = Math.floor(Math.random() * cards.length);\n')
+f.write('document.write("<img src=\'cards/" + cards[random] + ".svg\'>");')
+
+
 print(headers)
+print(codes)
 print("Done " + str(n))
 
